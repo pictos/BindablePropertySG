@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "BPSourceGen": {
+      "commandName": "DebugRoslynComponent",
+      "targetProject": "..\\BindablePropertySG\\BindablePropertySG.csproj"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BindablePropertySG", "BindablePropertySG\BindablePropertySG.csproj", "{63B49A85-5E28-401D-A324-E46271EA9274}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BPSourceGen", "BPSourceGen\BPSourceGen.csproj", "{70223C8D-EF1D-4F4C-A22A-2F90320B7400}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63B49A85-5E28-401D-A324-E46271EA9274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63B49A85-5E28-401D-A324-E46271EA9274}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63B49A85-5E28-401D-A324-E46271EA9274}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63B49A85-5E28-401D-A324-E46271EA9274}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70223C8D-EF1D-4F4C-A22A-2F90320B7400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70223C8D-EF1D-4F4C-A22A-2F90320B7400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70223C8D-EF1D-4F4C-A22A-2F90320B7400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70223C8D-EF1D-4F4C-A22A-2F90320B7400}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0C379F7-0202-4F22-B89A-3840152A633D}
+	EndGlobalSection
+EndGlobal
