@@ -11,8 +11,12 @@
   </ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\BPSourceGen\BPSourceGen.csproj"
-						  OutputItemType="Analyzer"
-						  ReferenceOutputAssembly="false" />
+		<ProjectReference Include="..\BPSourceGen\BPSourceGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Page1.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </EmbeddedResource>
 	</ItemGroup>
 </Project>
