@@ -12,5 +12,12 @@ namespace BPSourceGen
         {
             return attribute.NamedArguments.SingleOrDefault(kvp => kvp.Key == name).Value;
         }
+
+        public static string GetAttributeValueByNameAsString(this AttributeData attribute, string name, string placeholder = "null")
+        {
+            var data = attribute.NamedArguments.SingleOrDefault(kvp => kvp.Key == name).Value;
+
+            return data.Value is null ? placeholder : (string)data.Value;
+        }
     }
 }

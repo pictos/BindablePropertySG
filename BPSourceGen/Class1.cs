@@ -13,7 +13,17 @@ namespace BPSourceGen
 
         public string DefaultValue { get; set; }
 
+        public string DefaultBindingMode { get; set; }
+
+        public string ValidadeValueMethodName { get; set; }
+
         public string PropertyChangedMethodName { get; set; }
+
+        public string PropertyChangingMethodName { get; set; }
+
+        public string CoerceValueMethodName { get; set; }
+
+        public string DefaultValueCreatorMethodName { get; set; }
 
         public BPCreationAttribute()
         {

@@ -8,7 +8,7 @@ namespace BindablePropertySG
     partial class MyCustomView : Xamarin.Forms.View
     {
         //public static readonly BindableProperty TextProperty = BindableProperty.Create(
-        //    nameof(Text), typeof(string), typeof(MyCustomView), default, propertyChanged: Invalidate);
+        //    nameof(Text), typeof(string), typeof(MyCustomView), default, BindingMode.TwoWay, propertyChanged: Invalidate);
 
         //public string Text
         //{
@@ -23,6 +23,7 @@ namespace BindablePropertySG
             {
                 customView.Text = "";
                 customView.TextColor = Color.Brown;
+
             }
         }
 

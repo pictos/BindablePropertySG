@@ -20,15 +20,25 @@ namespace BPSourceGen
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
     sealed class BPCreationAttribute : Attribute
     {
-        public string PropertyName { get; set; }
-        
+       public string PropertyName { get; set; }
+
         public Type ReturnType { get; set; }
-        
+
         public Type OwnerType { get; set; }
 
-        public string DefaultValue{ get; set; }
+        public string DefaultValue { get; set; }
+
+        public string DefaultBindingMode { get; set; }
+
+        public string ValidadeValueMethodName { get; set; }
 
         public string PropertyChangedMethodName { get; set; }
+
+        public string PropertyChangingMethodName { get; set; }
+
+        public string CoerceValueMethodName { get; set; }
+
+        public string DefaultValueCreatorMethodName { get; set; }
 
         public BPCreationAttribute()
         {
@@ -96,12 +106,17 @@ namespace {namespaceName}
                 var returnType = attribute.GetAttributeValueByName("ReturnType").Value;
                 var ownerType = attribute.GetAttributeValueByName("OwnerType").Value;
                 var defaultValue = attribute.GetAttributeValueByName("DefaultValue");
-                string defaultText = defaultValue.Value is null ? $"default({returnType})" : $"\"{defaultValue.Value}\"";
+                var defaultText = defaultValue.Value is null ? $"default({returnType})" : $"\"{defaultValue.Value}\"";
 
-                var propertyChangedDelegateName = attribute.GetAttributeValueByName("PropertyChangedMethodName").Value;
+                var propertyChangedMethodName = attribute.GetAttributeValueByName("PropertyChangedMethodName").Value;
+                var propertyChangingMethodName = attribute.GetAttributeValueByNameAsString("PropertyChangingMethodName");
+                var defaultBindingMode = attribute.GetAttributeValueByNameAsString("DefaultBindingMode", "BindingMode.OneWay");
+                var validateValueMethodName = attribute.GetAttributeValueByNameAsString("ValidadeValueMethodName");
+                var coerceValueMethodName = attribute.GetAttributeValueByNameAsString("CoerceValueMethodName");
+                var defaultValueCreatorMethodName = attribute.GetAttributeValueByNameAsString("DefaultValueCreatorMethodName");
 
                 //BindableProperty.Create(nameof(Text), typeof(string), typeof(MyCustomView), default, propertyChanged: Invalidate);
-                sb.Append($"BindableProperty.Create(\"{propName}\", typeof({returnType}), typeof({ownerType}), {defaultText}, propertyChanged: {propertyChangedDelegateName});");
+                sb.Append($"BindableProperty.Create(\"{propName}\", typeof({returnType}), typeof({ownerType}), {defaultText}, {defaultBindingMode}, {validateValueMethodName}, {propertyChangedMethodName}, {propertyChangingMethodName}, {coerceValueMethodName}, {defaultValueCreatorMethodName} );");
                 sb.AppendLine(Environment.NewLine);
 
                 /*
